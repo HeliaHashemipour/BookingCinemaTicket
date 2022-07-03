@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>خرید صندلی</title>
+    <link rel="stylesheet" href="style.css" />
+
+    <style></style>
+  </head>
+  <body>
+    <div>
+      <img class="main-logo" src="/images/templatemo_logo.png" />
+    </div>
+
+    <div class="movie-container">
+      <label style="font-size: 1em">یک فیلم را مشخص کنید</label>
+      <select id="movie">
+        <option value="30">قهرمان</option>
+        <option value="30">آتابای</option>
+        <option value="30">گشت ارشاد</option>
+        <option value="30">درخت گردو</option>
+        <option value="30">رمانتیسم عماد و طوبا</option>
+        <option value="30">دینامیت</option>
+        <option value="30">منصور</option>
+        <option value="30">خورشید</option>
+        <option value="30">حکم تجدید نظر</option>
+      </select>
+    </div>
+
+    <ul class="showcase">
+      <li>
+        <div id="seat" class="seat"></div>
+        <small class="status" style="font-size: 1em">خالی</small>
+      </li>
+      <li>
+        <div id="seat" class="seat selected"></div>
+        <small class="status" style="font-size: 1em">انتخاب شده</small>
+      </li>
+      <li>
+        <div id="seat" class="seat occupied"></div>
+        <small class="status" style="font-size: 1em">پر</small>
+      </li>
+    </ul>
+
+    <div class="container">
+      <div class="screen"></div>
+
+      <div class="row">
+        <div id="seat" class="seat"></div>
+        <div id="seat" class="seat"></div>
+        <div id="seat" class="seat"></div>
+        <div id="seat" class="seat"></div>
+        <div id="seat" class="seat"></div>
+        <div id="seat" class="seat"></div>
+        <div id="seat" class="seat"></div>
+        <div id="seat" class="seat"></div>
+      </div>
+      <div class="row">
+        <div id="seat" class="seat"></div>
+        <div id="seat" class="seat"></div>
+        <div id="seat" class="seat"></div>
+        <div id="seat" class="seat occupied"></div>
+        <div id="seat" class="seat occupied"></div>
+        <div id="seat" class="seat"></div>
+        <div id="seat" class="seat"></div>
+        <div id="seat" class="seat"></div>
+      </div>
+      <div class="row">
+        <div id="seat" class="seat"></div>
+        <div id="seat" class="seat"></div>
+        <div id="seat" class="seat"></div>
+        <div id="seat" class="seat"></div>
+        <div id="seat" class="seat"></div>
+        <div id="seat" class="seat"></div>
+        <div id="seat" class="seat occupied"></div>
+        <div id="seat" class="seat occupied"></div>
+      </div>
+      <div class="row">
+        <div id="seat" class="seat"></div>
+        <div id="seat" class="seat"></div>
+        <div id="seat" class="seat"></div>
+        <div id="seat" class="seat"></div>
+        <div id="seat" class="seat"></div>
+        <div id="seat" class="seat"></div>
+        <div id="seat" class="seat"></div>
+        <div id="seat" class="seat"></div>
+      </div>
+      <div class="row">
+        <div id="seat" class="seat"></div>
+        <div id="seat" class="seat"></div>
+        <div id="seat" class="seat"></div>
+        <div id="seat" class="seat occupied"></div>
+        <div id="seat" class="seat occupied"></div>
+        <div id="seat" class="seat"></div>
+        <div id="seat" class="seat"></div>
+        <div id="seat" class="seat"></div>
+      </div>
+      <div class="row">
+        <div id="seat" class="seat"></div>
+        <div id="seat" class="seat"></div>
+        <div id="seat" class="seat"></div>
+        <div id="seat" class="seat"></div>
+        <div id="seat" class="seat occupied"></div>
+        <div id="seat" class="seat occupied"></div>
+        <div id="seat" class="seat occupied"></div>
+        <div id="seat" class="seat"></div>
+      </div>
+    </div>
+
+    <p class="text" style="font-size: 1em; margin: 0px 0px 15px 0px">
+      هزینه ی صندلی های انتخابی برای <span id="count">0</span> صندلی، برای قیمت
+      <span id="total">0</span>
+    </p>
+    <a href="./index.html">
+      <button class="btn-save">ثبت</button>
+    </a>
+    <h1></h1>
+    <a href="./index.html">
+      <button class="btn-home">بازگشت</button>
+    </a>
+
+    <script>
+      var count = 0;
+      var seats = document.getElementsByClassName("seat");
+      for (var i = 0; i < seats.length; i++) {
+        var item = seats[i];
+
+        item.addEventListener("click", (event) => {
+          var price = document.getElementById("movie").value;
+
+          if (
+            !event.target.classList.contains("occupied") &&
+            !event.target.classList.contains("selected")
+          ) {
+            count++;
+
+            var total = count * price;
+            event.target.classList.add("selected");
+            document.getElementById("count").innerText = count;
+            document.getElementById("total").innerText = total;
+          }
+        });
+      }
+    </script>
+  </body>
+</html>

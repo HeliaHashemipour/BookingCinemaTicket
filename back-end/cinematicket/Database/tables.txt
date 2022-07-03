@@ -1,0 +1,28 @@
+CREATE TABLE IF NOT EXISTS users (
+	username VARCHAR(64) PRIMARY KEY,
+	email VARCHAR(64),
+	pass VARCHAR(64)
+);
+
+CREATE TABLE IF NOT EXISTS movies (
+	title VARCHAR(64) PRIMARY KEY,
+	actors_names VARCHAR(64),
+	director VARCHAR(64),
+	description varchar(1000),
+	release_year INT,
+	duration INT,
+	rating FLOAT,
+	trailer VARCHAR(64)
+);
+
+CREATE TABLE IF NOT EXISTS comments (
+    user_id INT references users(username),
+    movie_id INT references movies(title),
+	text VARCHAR(255)
+);
+
+CREATE TABLE IF NOT EXISTS rates (
+    user_id INT references users(username),
+    movie_id INT references movies(title),
+	score INT
+);
