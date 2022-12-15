@@ -1,3 +1,7 @@
+> Instructor: [Dr. A. Kalbasi](https://scholar.google.ca/citations?user=oISEZIUAAAAJ&hl=en)
+
+> Semester: Fall 2021
+
 # CinemaTicket
 
 In this project movie ticket is booked using movie Ticket booking system. We enter into Web page by logging with User Name and Password. 
